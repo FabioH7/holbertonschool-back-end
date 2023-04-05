@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Getting my first apis """
-import requests
 import json
+import requests
 from sys import argv
 
 
