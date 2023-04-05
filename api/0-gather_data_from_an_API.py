@@ -2,7 +2,7 @@
 """ Getting my first apis """
 import json
 import requests
-from sys import argv
+import sys
 
 
 if __name__ == "__main__":
@@ -10,7 +10,7 @@ if __name__ == "__main__":
     todos_api = requests.get(
         'https://jsonplaceholder.typicode.com/todos/')
     user_api = requests.get(
-        'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1]))
+        'https://jsonplaceholder.typicode.com/users/{}'.format(sys.argv[1]))
     todo_data = todos_api.text
     user_data = user_api.text
     user = json.loads(user_data)
@@ -24,6 +24,6 @@ if __name__ == "__main__":
             all_todos += 1
     print(
         'Employee {} is done with tasks({}/{}):'
-        .format(user['name'], len(completed), all_todos))
+        .format(user['name'], len(completed), all_todos), file=sys.stdout)
     for finished_todo in completed:
-        print('\t {}'.format(finished_todo['title']))
+        print('\t {}'.format(finished_todo['title']), file=sys.stdout)
