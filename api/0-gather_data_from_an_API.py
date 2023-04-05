@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-""" Getting my first apis """
 import requests
 import json
 from sys import argv
+""" Getting my first apis """
 
 todos_api = requests.get(
     'https://jsonplaceholder.typicode.com/todos/')
