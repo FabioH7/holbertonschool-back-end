@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+""" Getting my first apis and writing to csv """
 import csv
 import json
 import requests
@@ -19,7 +21,8 @@ if __name__ == "__main__":
     for todo in todos:
         if todo['userId'] == user['id']:
             all_todos.append(
-                (user['id'], user['username'], todo['completed'], todo['title']))
+                (user['id'], user['username'], todo['completed'],
+                 todo['title']))
     filename = "{}.csv".format(user['id'])
     with open(filename, 'w', newline='') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=',',
